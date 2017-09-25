@@ -498,13 +498,13 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "tinybasic.l"
+#line 1 "michael_tinybasic.l"
 /*Michael Luiman - Courant Institute - Priyanka Suresh - Cory Plock
-tinybasic.l*/
-#line 4 "tinybasic.l"
+michael_tinybasic.l*/
+#line 4 "michael_tinybasic.l"
 #include <iostream>
 #include <stdlib.h>
-#include "tinybasic.tab.h" 
+#include "michael_tinybasic.tab.h" 
 using namespace std;
 #line 509 "lex.yy.c"
 #line 510 "lex.yy.c"
@@ -724,10 +724,10 @@ YY_DECL
 		}
 
 	{
-#line 12 "tinybasic.l"
+#line 12 "michael_tinybasic.l"
 
 
-#line 15 "tinybasic.l"
+#line 15 "michael_tinybasic.l"
                        
 #line 732 "lex.yy.c"
 
@@ -788,123 +788,123 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 16 "tinybasic.l"
+#line 16 "michael_tinybasic.l"
 { /* whitespace */ }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 17 "tinybasic.l"
+#line 17 "michael_tinybasic.l"
 { return PRINT; }  
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 18 "tinybasic.l"
+#line 18 "michael_tinybasic.l"
 { return IF; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 19 "tinybasic.l"
+#line 19 "michael_tinybasic.l"
 { return THEN; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 20 "tinybasic.l"
+#line 20 "michael_tinybasic.l"
 { return GOTO; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 21 "tinybasic.l"
+#line 21 "michael_tinybasic.l"
 { return INPUT; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 22 "tinybasic.l"
+#line 22 "michael_tinybasic.l"
 { return LET; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 23 "tinybasic.l"
+#line 23 "michael_tinybasic.l"
 { return GOSUB; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 24 "tinybasic.l"
+#line 24 "michael_tinybasic.l"
 { return RETURN; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 25 "tinybasic.l"
+#line 25 "michael_tinybasic.l"
 { return CLEAR; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 26 "tinybasic.l"
+#line 26 "michael_tinybasic.l"
 { return LIST; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 27 "tinybasic.l"
+#line 27 "michael_tinybasic.l"
 { return RUN; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 28 "tinybasic.l"
+#line 28 "michael_tinybasic.l"
 { return END; } 
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 29 "tinybasic.l"
+#line 29 "michael_tinybasic.l"
 { return RELOP; }
 	YY_BREAK
 case 15:
 /* rule 15 can match eol */
 YY_RULE_SETUP
-#line 30 "tinybasic.l"
+#line 30 "michael_tinybasic.l"
 { return CR; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 31 "tinybasic.l"
+#line 31 "michael_tinybasic.l"
 { return DIGIT;  }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 32 "tinybasic.l"
+#line 32 "michael_tinybasic.l"
 { return MULDIV; } 
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 33 "tinybasic.l"
+#line 33 "michael_tinybasic.l"
 { return PLUMIN; }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 34 "tinybasic.l"
+#line 34 "michael_tinybasic.l"
 { return COMMA; }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 35 "tinybasic.l"
+#line 35 "michael_tinybasic.l"
 { return STRING; }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 36 "tinybasic.l"
+#line 36 "michael_tinybasic.l"
 { return VAR; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 37 "tinybasic.l"
+#line 37 "michael_tinybasic.l"
 { return LPAREN; } 
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 38 "tinybasic.l"
+#line 38 "michael_tinybasic.l"
 { return RPAREN; }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 40 "tinybasic.l"
+#line 40 "michael_tinybasic.l"
 ECHO;
 	YY_BREAK
 #line 910 "lex.yy.c"
@@ -1912,6 +1912,6 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 40 "tinybasic.l"
+#line 40 "michael_tinybasic.l"
 
 
