@@ -1,4 +1,4 @@
-%{
+{
 #include <iostream>
 using namespace std;
 #define YY_DECL extern "C" int yylex()
@@ -27,13 +27,16 @@ using namespace std;
 	C -> cC | c 
 	S -> S1 | S2
 	
-3.  	alpha -> a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z
-	numeric -> 0|1|2|3|4|5|6|7|8|9
-	dph -> .|+|-
+3.  	email -> local_part at domain 
+	alpha -> a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z
+	numerics -> 0|one_to_nine
+	one_to_nine -> 1|2|3|4|5|6|7|8|9
+	dph -> .|+|-|ε
+	local_part -> alpha alpha_numeric_dph
+	alpha_numeric_dph -> combo dph combo alpha_numeric_dph    
+	combo -> alpha combo | numeric combo
 	at -> @
-	local_part -> 
-	domain -> 
-	
-	combo -> alpha word | numeric word | ε 
-	
-	
+	domain -> alpha_numeric_dph . suffix | octet octet octet octet
+	suffix -> alpha alpha alpha 
+	octet -> 2 numeric ones | 1 numeric ones | one_to_nine ones | ones
+	ones -> numeric 
