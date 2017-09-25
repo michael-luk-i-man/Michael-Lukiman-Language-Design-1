@@ -9,12 +9,12 @@ using namespace std;
 
 [ \n\r]|[ \r]	{ cout << "Found a cr:" << yytext <<endl; }
 \<|\>|\=	{ cout << "Found a relop:" << yytext <<endl; }
-[0-9]	{ cout << "Found a digit:" << yytext <<endl; }
+/b[0-9]/b	{ cout << "Found a digit:" << yytext <<endl; }
 \*|\/ 	{ cout << "Found a muldiv:" << yytext <<endl; }
 \+|\-	{ cout << "Found a plumin:" << yytext <<endl; }
-[A-Z]	{ cout << "Found a var:" << yytext <<endl; }
+/b[A-Z]/b	{ cout << "Found a var:" << yytext <<endl; }
 \,	{ cout << "Found a comma:" << yytext <<endl; }
-\"[a-zA-Z0-9_]+\" { cout << "Found a string:" << yytext <<endl; }
+/b\"[a-zA-Z0-9_]+\"/b { cout << "Found a string:" << yytext <<endl; }
 \(	{ cout << "Found a lparen:" << yytext <<endl; } 
 \)	{ cout << "Found a rparen" << yytext <<endl; }
 %%
