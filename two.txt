@@ -1,0 +1,19 @@
+%{
+#include <iostream>
+using namespace std;
+#define YY_DECL extern "C" int yylex()
+%}
+%%
+[ \t\n];
+1. 	in -> A*BBB*C*B*
+	A -> a
+	B -> b
+	C -> c
+ In formal BNF:
+	S -> ABCD
+	A -> aA|ε
+	B -> bbX
+	X -> bX|b|ε
+	C -> cC|ε
+	D -> bD|ε
+	
