@@ -1,0 +1,289 @@
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ git commit -am 'Initial'
+On branch master
+
+Initial commit
+
+Untracked files:
+	.one.txt.swp
+	one.txt
+
+nothing added to commit but untracked files present
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ git add -A
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ git commit -am 'Initial'
+[master (root-commit) e51758a] Initial
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 .one.txt.swp
+ create mode 100644 one.txt
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ git push origin master
+Username for 'https://github.com': michael-luk-i-man
+Password for 'https://michael-luk-i-man@github.com': 
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 502 bytes | 502.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/michael-luk-i-man/Michael-Lukiman-Language-Design-1.git
+ * [new branch]      master -> master
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ vim .git/config
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ git config --global credential.https://github.com.username michael-luk-i-man
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ git push origin master
+Password for 'https://michael-luk-i-man@github.com': 
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ vim one.txt 
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ vim one.txt 
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ touch two.txt
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ vim two.txt
+
+[1]+  Stopped                 vim two.txt
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ vim two.txt
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ touch three.txt
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ gcc
+gcc: fatal error: no input files
+compilation terminated.
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ flex
+^C
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ touch three.l
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ vim three.l
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ flex three.l
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ ls
+lex.yy.c  one.txt  three.l  three.txt  two.txt
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ gcc lex.yy.c -lfl -o three
+three.l:2:10: fatal error: iostream: No such file or directory
+ #include <iostream>
+          ^~~~~~~~~~
+compilation terminated.
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ g++ lex.yy.c -lfl -o three
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ ls
+lex.yy.c  one.txt  three  three.l  three.txt  two.txt
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ cd t
+three      three.l    three.txt  two.txt    
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ cd t
+three      three.l    three.txt  two.txt    
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ cd three
+bash: cd: three: Not a directory
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ rm three
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ ls
+lex.yy.c  one.txt  three.l  three.txt  two.txt
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ flex three.l
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ ls
+lex.yy.c  one.txt  three.l  three.txt  two.txt
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ ls
+lex.yy.c  one.txt  three.l  three.txt  two.txt
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ g++ lex.yy.c -lfl -o three
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ g++ 
+g++: fatal error: no input files
+compilation terminated.
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ g++ three
+/usr/bin/ld: three: stdout: invalid version 2 (max 0)
+three: error adding symbols: Bad value
+collect2: error: ld returned 1 exit status
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ ^C
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ three
+bash: three: command not found
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ vim three
+
+[2]+  Stopped                 vim three
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ vim
+
+[3]+  Stopped                 vim
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ ls
+lex.yy.c  one.txt  three  three.l  three.txt  two.txt
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ rm three
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ g++ lex.yy.c -ll -o three
+/usr/bin/ld: cannot find -ll
+collect2: error: ld returned 1 exit status
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ sudo pacman -S flex
+[sudo] password for ashkarav: 
+warning: flex-2.6.4-1 is up to date -- reinstalling
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (1) flex-2.6.4-1
+
+Total Download Size:   0.28 MiB
+Total Installed Size:  0.84 MiB
+Net Upgrade Size:      0.00 MiB
+
+:: Proceed with installation? [Y/n] Y
+:: Retrieving packages...
+ flex-2.6.4-1-x86_64      282.8 KiB   240K/s 00:01 [############] 100%
+(1/1) checking keys in keyring                     [############] 100%
+(1/1) checking package integrity                   [############] 100%
+(1/1) loading package files                        [############] 100%
+(1/1) checking for file conflicts                  [############] 100%
+(1/1) checking available disk space                [############] 100%
+:: Processing package changes...
+(1/1) reinstalling flex                            [############] 100%
+:: Running post-transaction hooks...
+(1/2) Arming ConditionNeedsUpdate...
+(2/2) Updating the info directory file...
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ flex three.l
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ ls
+lex.yy.c  one.txt  three.l  three.txt  two.txt
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ g++ lex.yy.c 
+/tmp/ccOaurEY.o: In function `yylex':
+lex.yy.c:(.text+0x755): undefined reference to `yywrap'
+/tmp/ccOaurEY.o: In function `yyinput()':
+lex.yy.c:(.text+0x1397): undefined reference to `yywrap'
+collect2: error: ld returned 1 exit status
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ g++ lex.yy.c -lfl -o three
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ ./three.out
+bash: ./three.out: No such file or directory
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ ./three
+90
+Found a digit:9
+Found a digit:0
+23.4
+Found a digit:2
+Found a digit:3
+.Found a digit:4
+"Noam Chomsky"                                           
+"Found a var:N
+oamFound a var:C
+homsky"^C
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ 
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ g++ lex.yy.c -lfl -o three
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ ./three
+"Noam Chomsky"  
+"NoamChomsky"^[[A^[[B^C
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ flex three.l
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ g++ lex.yy.c -lfl -o three
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ ./three"wow"
+"wow"90
+90huh
+huh^C
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ flex three.l[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ g++ lex.yy.c -lfl -o three
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ ./three90
+Found a digit:9
+Found a digit:0
+wow
+wow wow that's
+wowthat's 
+
+^C
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ flex three.l[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ g++ lex.yy.c -lfl -o three
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ ./threewow
+wow90
+Found a digit:9
+Found a digit:0
+PRINT
+PRINT^C
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ flex three.l[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ g++ lex.yy.c -lfl -o three
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ ./three90
+Found a digit:9
+Found a digit:0
+wow
+wow"wow"
+Found a string:"wow"
+"wow""wow"
+Found a string:"wow"
+Found a string:"wow"
+ 
+*
+Found a muldiv:*
+*/
+Found a muldiv:*
+Found a muldiv:/
+A
+Found a var:A
+,
+Found a comma:,
+"_alright5"
+Found a string:"_alright5"
+"afdj " asdf"Asdf aasdf"
+Found a string:"afdj "
+asdfFound a string:"Asdf aasdf"
+^C
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ 
+
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ flex three.l[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ g++ lex.yy.c -lfl -o three
+[ashkarav@hummus Michael-Lukiman-Language-Design-1]$ ./three1. Keywords: PRINT, IF, THEN, GOTO, INPUT, LET, GOSUB, RETURN, CLEAR, LIST, RUN, END.
+2. CR : newline/carriage return (\n\r on Windows, \r on Mac and Unix)
+3. RELOP : any one of < > =
+4. DIGIT : any digit from 0 to 9
+5. MULDIV : * or /
+6. PLUMIFound a digit:1
+N : + or -
+7. VAR : capital letter A through Z. (Just a single letter)
+8. COMMA : ,
+9. STRING : any sequence of letters, numbers, spaces, and underscores, enclosed within double quotes.
+Example: "_13bl h_6"
+10. LPAREN : (
+11. RPAREN : ).Found a var:K
+eywords:Found a var:PRINT
+Found a comma:,
+Found a var:IF
+Found a comma:,
+Found a var:THEN
+Found a comma:,
+Found a var:GOTO
+Found a comma:,
+Found a var:INPUT
+Found a comma:,
+Found a var:LET
+Found a comma:,
+Found a var:GOSUB
+Found a comma:,
+Found a var:RETURN
+Found a comma:,
+Found a var:CLEAR
+Found a comma:,
+Found a var:LIST
+Found a comma:,
+Found a var:RUN
+Found a comma:,
+Found a var:END
+.Found a digit:2
+.Found a var:CR
+:newlineFound a muldiv:/
+carriagereturnFound a lparen:(
+\n\ronFound a var:W
+indowsFound a comma:,
+\ronFound a var:M
+acandFound a var:U
+nixFound a rparen)
+Found a digit:3
+.Found a var:RELOP
+:anyoneofFound a relop:<
+Found a relop:>
+Found a relop:=
+Found a digit:4
+.Found a var:DIGIT
+:anydigitfromFound a digit:0
+toFound a digit:9
+Found a digit:5
+.Found a var:MULDIV
+:Found a muldiv:*
+orFound a muldiv:/
+Found a digit:6
+.Found a var:PLUMIN
+:Found a plumin:+
+orFound a plumin:-
+Found a digit:7
+.Found a var:VAR
+:capitalletterFound a var:A
+throughFound a var:Z
+.Found a lparen:(
+Found a var:J
+ustasingleletterFound a rparen)
+Found a digit:8
+.Found a var:COMMA
+:Found a comma:,
+Found a digit:9
+.Found a var:STRING
+:anysequenceoflettersFound a comma:,
+numbersFound a comma:,
+spacesFound a comma:,
+andunderscoresFound a comma:,
+enclosedwithindoublequotes.Found a var:E
+xample:Found a string:"_13bl h_6"
+Found a digit:1
+Found a digit:0
+.Found a var:LPAREN
+:Found a lparen:(
+"Noam Chomsky"
+Found a digit:1
+Found a digit:1
+.Found a var:RPAREN
+:Found a rparen)
+Found a string:"Noam Chomsky"
+
