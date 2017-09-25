@@ -6,4 +6,4 @@ One
 4. Seems to do a lot of damage - i.e. since it loses all but the lowest n order bits, it loses magnitude and possibly sign when converting from int to a smaller integral type.
 5. Local and distributed file systems work, but also storage in databases (which are not technically files). There are addition restrictions and requirements for database storage, such as not imposing optional restrictions and options to convert to restriction-obeying forms. 
 6. A class inside another class that is not explicitly or implicitly declared static: a non-static member class, a local class, or an anonymous class. 
-
+7. Exceptions derived from superclass Error indicate points where ordinary programs are not expected to recover. Exceptions derived from RuntimeException are thrown during evaluation, but are not necessarily unrecoverable.  
