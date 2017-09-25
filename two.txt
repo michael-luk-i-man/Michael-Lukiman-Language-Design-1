@@ -27,16 +27,16 @@ using namespace std;
 	C -> cC | c 
 	S -> S1 | S2
 	
-3.  	email -> local_part at domain 
+3.  	email -> local_part at domain  # (b) 
 	alpha -> a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z
-	numerics -> 0|one_to_nine
+	numerics -> 0|one_to_nine 
 	one_to_nine -> 1|2|3|4|5|6|7|8|9
 	dph -> .|+|-|ε
-	local_part -> alpha alpha_numeric_dph
-	alpha_numeric_dph -> combo dph combo alpha_numeric_dph    
-	combo -> alpha combo | numeric combo
+	local_part -> alpha alpha_numeric_dph # (c)(e)(f)
+	alpha_numeric_dph -> combo dph combo alpha_numeric_dph | combo dph combo # (d)(a)
+	combo -> alpha combo | numeric combo | alpha | numeric
 	at -> @
-	domain -> alpha_numeric_dph . suffix | octet octet octet octet
-	suffix -> alpha alpha alpha 
-	octet -> 2 numeric ones | 1 numeric ones | one_to_nine ones | ones
+	domain -> alpha_numeric_dph . suffix | octet octet octet octet # (c)(f)(g) 
+	suffix -> alpha alpha alpha # (g)
+	octet -> 2 numeric ones | 1 numeric ones | one_to_nine ones | ones # (g)
 	ones -> numeric 
