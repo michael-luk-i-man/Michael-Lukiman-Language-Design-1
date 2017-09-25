@@ -4,7 +4,6 @@ using namespace std;
 #define YY_DECL extern "C" int yylex()
 %}
 %%
-[ \t\n]		;
 \bPRINT\b|\bIF\b|\bTHEN\b|\bGOTO\b|\bINPUT\b|\bLET\b|\bGOSUB\b|\bRETURN\b|\bCLEAR\b|\bLIST\b|\bRUN\b|\bEND\b	{ cout << "Found a keyword:" << yytext <<endl; }
 
 [ \n\r]|[ \r]	{ cout << "Found a cr:" << yytext <<endl; }
