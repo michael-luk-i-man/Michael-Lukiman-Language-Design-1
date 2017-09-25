@@ -45,30 +45,46 @@ int yyerror(const char *p) { std::cerr << "error: " << p << std::endl; };
 
 program:	line program                            { std::cout << $1 << std::endl; } ;
 
-line:	number statement CR
-	| statement CR
+line:		number statement CR
+	|	statement CR
 	;
 
-statement:	PRINT expr-list
+statement:	PRINT expr_list
 	|	IF expression RELOP expression THEN statement
 	|	GOTO expression
-	|	INPUT var-list
+	|	INPUT var_list
 	|	LET VAR = expression
 	| 	GOSUB expression
 	|	RETURN
 	| 	CLEAR
 	| 	LIST
-	| 	RUN
+	| 	RUN    	 | LPAREN expr RPAREN               { $$ = $2; }
+
 	|	END
 	;
 
-expr : expr PLUS expr                   { $$ = $1 + $3; }
-     | expr MINUS expr                  { $$ = $1 - $3; }
-     | expr MUL expr                    { $$ = $1 * $3; }
-     | expr DIV expr                    { $$ = $1 / $3; }
-     | NUM                              /* default action: { $$ = $1; } */
-     | LPAREN expr RPAREN               { $$ = $2; }
-     ;
+expr_list:	strexp COMMA expr_list
+	|	strexp
+	;
+
+strexp:		STRING
+      	|	expression
+
+expression:	PLUMIN term expression
+	|	PLUMIN term
+	;
+
+term:		factor MULDIV term  
+	|	factor
+	;
+
+factor:		VAR
+      	|	number
+	|	LPAREN expression RPAREN
+	;
+
+number:		DIGIT number 
+      	|	/*eps*/
 
 %%
 
